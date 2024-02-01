@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sign-up Form</title>
   </head>
   <link rel="stylesheet" href="style.css" />
   <body>
     <div class="box">
-      <h1>Sign up</h1>
-      <div class="input-field">
-          <div class="user-input">
+      <h1 id="title">Sign up</h1>
+        <div class="input-field">
+          <div class="user-input" id="username">
             <img src="user-logo.svg" class="section-input" />
             <input type="text" placeholder="Full name" />
           </div>
@@ -19,11 +19,17 @@
             <input type="email" placeholder="email" />
           </div>
           <div class="user-input">
-            <img src="user-logo.svg" class="section-input" />
+            <img src="password-input.svg" class="section-input" />
             <input type="text" placeholder="Password" />
           </div>
+          <p>Lost Password <a href="">Click Here</a></p>
+        </div>
+        <div class="button">
+          <button type="button" id="sign-in" class="disable">Sign In</button>
+          <button type="button" id="sign-up" class="disable">Sign Up</button>
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
