@@ -1,9 +1,21 @@
-let signIn = document.getElementById("sign-in");
-let signUp = document.getElementById("sign-up");
-let username = document.getElementById("username");
+let signinBtn = document.getElementById("signinBtn");
+let signupBtn = document.getElementById("signupBtn");
+let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
 
 
-signIn onclick = function(){
-    username.style.maxHeignt="0";
+signinBtn.onclick = function(){
+  nameField.style.maxHeight = "0";
+  nameField.style.border = "0";
+  title.innerHTML = "Sign In";
+  signupBtn.classList.add("disable");
+  signinBtn.classList.remove("disable");
+}
+
+signupBtn.onclick = function(){
+  nameField.style.maxHeight = "65px";
+  nameField.style.border = "1px solid rgb(170, 170, 170)";
+  title.innerHTML = "Sign Up";
+  signinBtn.classList.add("disable");
+  signupBtn.classList.remove("disable");
 }
