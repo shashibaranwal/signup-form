@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600;700&family=PT+Sans&family=Poppins:wght@200;400;500;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins" sans-serif;
+}
+
+body{
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    margin-top: 120px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px grey;
+    height: 50vh;
+    width: 70vh;
+    background-color: white;
+    text-align: center;
+
+}
+
+.input-field{
+    width: 80vw;
+}
+h1{
+    color: #3c00a0;
+    padding: 25px;
+    font-family: poppins;
+    /* margin-bottom: 20px; */
+}
+.user-input{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* justify-content: center; */
+    gap: 10px;
+    width: 15px;
+    margin: 15px;
+    border-radius: 4px;
+
+}
+
+input{
+    /* border: 1px solid black; */
+    /* border-width: 0px; */
+    padding: 4px 5px;
+}
