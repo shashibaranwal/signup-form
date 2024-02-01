@@ -10,29 +10,31 @@ body{
     background-color: blanchedalmond;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .box{
-    margin-top: 120px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 4px grey;
-    height: 50vh;
-    width: 70vh;
+    margin-top: 150px;
+    /* margin-left: 100px; */
+    border-radius: 10px; 
+    box-shadow: 4px 4px 4px rgb(149, 73, 73);
+    height: 60vh;
+    width: 50vw;
     background-color: white;
     text-align: center;
+    position: relative;
 
 }
 
-.input-field{
-    width: 80vw;
-}
-h1{
+.box> h1{
     color: #3c00a0;
+    background-color: #eaeaea;
     padding: 25px;
     font-family: poppins;
     /* margin-bottom: 20px; */
 }
 .user-input{
+    /* background-color: #eaeaea; */
     padding: 10px;
     display: flex;
     align-items: center;
@@ -42,11 +44,52 @@ h1{
     width: 15px;
     margin: 15px;
     border-radius: 4px;
-
 }
 
 input{
     /* border: 1px solid black; */
     /* border-width: 0px; */
+    /* background-color: transparent; */
     padding: 4px 5px;
+    width: 200px;
+}
+
+.input-field p{
+    font-family: poppins;
+    font-size: small;
+    align-items: center;
+}
+#username{
+    max-height: 35px;
+    transition: max-height 0.5s;
+    /* overflow: hidden; */
+}
+
+    /* BUTTONS */
+.button{
+    padding: 25px;
+    /* justify-content: space-around; */
+    /* gap: 50px; */
+    
+}
+#sign-in{
+    margin-right: 15px;
+    padding:5px 20px;
+    border: none;
+    /* border-color: whitesmoke; */
+    border-radius: 30px;
+    background-color: #3c00a0;
+    color: white;
+}
+#sign-up{
+    margin-left: 15px;
+    padding:5px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #3c00a0;
+    color: white;
+}
+.button button{
+    transition: button 1s;
+    cursor: pointer;
 }
