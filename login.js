@@ -1,0 +1,46 @@
+// let signinBtn = document.getElementById("signinBtn");
+// let signupBtn = document.getElementById("signupBtn");
+// let nameField = document.getElementById("nameField");
+// let title = document.getElementById("title");
+
+
+// signinBtn.onclick = function(){
+//   nameField.style.maxHeight = "0";
+//   nameField.style.border = "0";
+//   title.innerHTML = "Sign In";
+//   signupBtn.classList.add("disable");
+//   signinBtn.classList.remove("disable");
+// }
+
+// signupBtn.onclick = function(){
+//   nameField.style.maxHeight = "65px";
+//   nameField.style.border = "1px solid rgb(170, 170, 170)";
+//   title.innerHTML = "Sign Up";
+//   signinBtn.classList.add("disable");
+//   signupBtn.classList.remove("disable");
+// }
+
+document.getElementById("loginForm").addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("userEmail").value;
+  const password = document.getElementById("userPassword").value;
+
+  // Basic validation
+  if (!email || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const user = { email, password };
+  
+  try {
+    localStorage.setItem('user', JSON.stringify(user));
+    // Display success message on page instead of alert
+    alert("login successful");
+    window.location.href = "index.html";
+  } catch (error) {
+    console.error("Error saving data:", error);
+    alert("An error occurred while signing up.");
+  }
+});
