@@ -3,39 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-In Form</title>
-<link rel="stylesheet" href="form-style.css">
-<script src="https://kit.fontawesome.com/190a8b6d58.js" crossorigin="anonymous"></script>
+  <title>Sign-Up Page</title>
+  <link rel="stylesheet" href="form-style.css">
+  <script src="https://kit.fontawesome.com/190a8b6d58.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <div class="form-box">
       <h1 id="title">Sign Up</h1>
-      <form action="">
+      <form id="loginForm" action="submit">
         <div class="input-group">
           <div class="input-field" id="nameField">
             <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="username">
+            <input id="userName" type="text" placeholder="username">
           </div>
           <div class="input-field">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" placeholder="email address">
+            <input id="userEmail" required type="email" placeholder="email address">
           </div>
           <div class="input-field">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="password">
+            <input id="userPassword" required type="password" placeholder="password">
           </div>
           <p>Forget password <a href="">Click Here</a></p>
         </div>
         <div class="btn-field">
-          <button type="button" id="signinBtn" class="disable">Sign in</button>
-          <button type="button" id="signupBtn">Sign up</button>
+          <button type="submit" id="signinBtn" >Sign up</button>
+          <!-- <button type="button" id="signupBtn">Sign up</button> -->
         </div>
       </form>
     </div>
   </div>
 
 
-<script src="form-script.js"></script>
+<script src="signup.js"></script>
 </body>
 </html>
