@@ -33,12 +33,15 @@ document.getElementById("loginForm").addEventListener('submit', function(e) {
     return;
   }
 
-  const user = { username, email, password };
+  const newUser = { username, email, password };
   
   try {
-    localStorage.setItem('user', JSON.stringify(user));
-    // Display success message on page instead of alert
-    alert("Signup successful")
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push(newUser);
+
+    localStorage.setItem('user', JSON.stringify(users));
+
+    alert("Signup successful");
     window.location.href = "login.html";
   } catch (error) {
     console.error("Error saving data:", error);
