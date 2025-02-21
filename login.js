@@ -1,25 +1,3 @@
-// let signinBtn = document.getElementById("signinBtn");
-// let signupBtn = document.getElementById("signupBtn");
-// let nameField = document.getElementById("nameField");
-// let title = document.getElementById("title");
-
-
-// signinBtn.onclick = function(){
-//   nameField.style.maxHeight = "0";
-//   nameField.style.border = "0";
-//   title.innerHTML = "Sign In";
-//   signupBtn.classList.add("disable");
-//   signinBtn.classList.remove("disable");
-// }
-
-// signupBtn.onclick = function(){
-//   nameField.style.maxHeight = "65px";
-//   nameField.style.border = "1px solid rgb(170, 170, 170)";
-//   title.innerHTML = "Sign Up";
-//   signinBtn.classList.add("disable");
-//   signupBtn.classList.remove("disable");
-// }
-
 document.getElementById("loginForm").addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -32,15 +10,17 @@ document.getElementById("loginForm").addEventListener('submit', function(e) {
     return;
   }
 
-  const user = { email, password };
-  
-  try {
-    localStorage.setItem('user', JSON.stringify(user));
-    // Display success message on page instead of alert
-    alert("login successful");
-    window.location.href = "index.html";
-  } catch (error) {
-    console.error("Error saving data:", error);
-    alert("An error occurred while signing up.");
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
+  if(!storedUser){
+    alert("No user found!!");
   }
+
+  if(storedUser.email === email && storedUser.password === password){
+    alert("Login successful!!");
+    window.location.href = "index.html";
+  } else {
+    alert("Invalid user email or password. Please try again.");
+  }
+
 });
