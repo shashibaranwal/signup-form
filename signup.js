@@ -20,7 +20,7 @@
 //   signupBtn.classList.remove("disable");
 // }
 
-document.getElementById("loginForm").addEventListener('submit', function(e) {
+document.getElementById("signupForm").addEventListener('submit', function(e) {
   e.preventDefault();
 
   const username = document.getElementById("userName").value;
@@ -33,16 +33,25 @@ document.getElementById("loginForm").addEventListener('submit', function(e) {
     return;
   }
 
-  const newUser = { username, email, password };
+  let newUser = { username, email, password };
   
   try {
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push(newUser);
+    let users = new Array();
+    users = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem("users")) : [];
+    
+    if(users.some((v) => {
+      return v.email == email || v.username == username;
+    })){
+      alert("either duplicate username or email")
+    } else {
+      users.push(newUser);
 
-    localStorage.setItem('user', JSON.stringify(users));
+      localStorage.setItem('users', JSON.stringify(users));
+      alert("Signup successful");
+      window.location.href = "login.html";
+    }
+    // users.push(newUser);
 
-    alert("Signup successful");
-    window.location.href = "login.html";
   } catch (error) {
     console.error("Error saving data:", error);
     alert("An error occurred while signing up.");
