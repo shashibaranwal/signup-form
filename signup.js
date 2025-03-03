@@ -36,20 +36,21 @@ document.getElementById("signupForm").addEventListener('submit', function(e) {
   let newUser = { username, email, password };
   
   try {
-    let users = new Array();
-    users = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem("users")) : [];
+    // let users = new Array();
+    // let users = JSON.parse(localStorage?.getItem('users')) ? JSON.parse(localStorage.getItem("users")):"";
+    localStorage.setItem("user", JSON.stringify(newUser))
     
-    if(users.some((v) => {
-      return v.email == email || v.username == username;
-    })){
-      alert("either duplicate username or email")
-    } else {
-      users.push(newUser);
+    // if(users.some((v) => {
+    //   return v.email == email || v.username == username;
+    // })){
+    //   alert("either duplicate username or email")
+    // } else {
+    //   users.push(newUser);
 
-      localStorage.setItem('users', JSON.stringify(users));
-      alert("Signup successful");
-      window.location.href = "login.html";
-    }
+    //   localStorage.setItem('users', JSON.stringify(users));
+    //   alert("Signup successful");
+    //   window.location.href = "login.html";
+    // }
     // users.push(newUser);
 
   } catch (error) {
